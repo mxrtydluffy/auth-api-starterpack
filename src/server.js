@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 app.use(cookieParser());
 
-require('./data/db');
+require('../data/db');
 
 var checkAuth = (req, res, next) => {
   console.log("Checking authentication");
