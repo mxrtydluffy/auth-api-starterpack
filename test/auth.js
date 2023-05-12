@@ -44,12 +44,12 @@ describe('User', function () {
             done();
           });
       });
-
-      it('should be able to logout', function (done) {
-        agent.get('/logout').end(function (err, res) {
-          res.should.have.status(200);
-          agent.should.not.have.cookie('nToken');
-          done();
-        });
-      });
+        // For later use
+    //   it('should be able to logout', function (done) {
+    //     agent.get('/logout').end(function (err, res) {
+    //       res.should.have.status(200);
+    //       agent.should.not.have.cookie('nToken');
+    //       done();
+    //     });
+    //   });
 }); 

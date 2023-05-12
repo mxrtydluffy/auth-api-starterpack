@@ -20,13 +20,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-const User = require('./models/user');
+// const User = require('./models/user');
 
+require('./controllers/cats.js')(app);
 require('./controllers/auth.js')(app);
 
+const port = process.env.PORT;
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server running on port ${process.env.PORT}`);
-  });
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
 
 module.exports = app;

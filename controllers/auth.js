@@ -3,7 +3,14 @@ const jwt = require('jsonwebtoken');
 
 
 module.exports = (app) => {
-   pp.get('/', (req, res) => res.json("hello world"));
+   app.get('/', (req, res) => 
+   User.find().then((users) => {
+      res.json(users);
+   })
+      .catch((err) => {
+         throw err.message;
+      })
+   );
 
    app.get('/sign-up', (req, res) => res.render('sign-up'));
 
@@ -47,5 +54,25 @@ module.exports = (app) => {
       } catch (err) {
          console.log(err);
       }
+   });
+
+   app.get('/users/:id', (req, res) => {
+      User.findById(req.params.id)
+         .then((user) => {
+            res.json(user);
+         })
+         .catch((err) => {
+            console.log(err);
+         });
+   });
+
+   app.get('/users', (req, res) => {
+      User.find()
+         .then((user) => {
+            res.json(users);
+         })
+         .catch((err) => {
+            console.log(err);
+         })
    });
 };
