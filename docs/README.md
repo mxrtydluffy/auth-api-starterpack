@@ -1,6 +1,8 @@
 # 🐱 Cat API
 Backend JavaScript API to document your furry friends! Built with MongoDB and Node.js.
 
+[Documentation link](https://mxrtydluffy.github.io/auth-api-starterpack/)
+
 ## Features
 * Sign-up
 * Log-in
