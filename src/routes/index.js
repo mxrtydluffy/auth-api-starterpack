@@ -1,6 +1,6 @@
 const express = require('express')
-const messageRoutes = require('./message.js')
-const userRoutes = require('./user.js')
+const messageRoutes = require('../models/message')
+const userRoutes = require('../models/user')
 
 const router = express.Router()
 
